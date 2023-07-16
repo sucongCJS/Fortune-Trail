@@ -1,7 +1,7 @@
-import interface.cmdInterface, interface.GUIInterface
+import interface.CMDInterface, interface.GUIInterface
 
 interface_dict = {
-    'cmd': interface.cmdInterface,
+    'cmd': interface.CMDInterface,
     'gui': interface.GUIInterface
 }
 
