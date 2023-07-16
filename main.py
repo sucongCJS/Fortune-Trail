@@ -1,3 +1,3 @@
-import game.Board
+import game.board
 
-board = game.Board(row=5, col=5, interface='cmd')
+board = game.board(row=5, col=5, interface='cmd')
