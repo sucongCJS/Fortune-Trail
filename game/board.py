@@ -1,17 +1,21 @@
-import interface.CMDInterface, interface.GUIInterface
+from interface.CMDInterface import CMDInterface
+from interface.GUIInterface import GUIInterface
 
 interface_dict = {
-    'cmd': interface.CMDInterface,
-    'gui': interface.GUIInterface
+    'cmd': CMDInterface,
+    'gui': GUIInterface,
 }
 
 class Board:
-    def __init__(self, row, col, interface_type):
+    def __init__(self, row, col, interface_type) -> None:
         self.rows = row
         self.col = col
         
-        self.interface = interface_dict.get(interface_type)
-        if not self.interface:
+        Interface = interface_dict.get(interface_type)
+        if not Interface:
             raise ValueError('Invalid interface type')
         
-        self.interface = self.interface(self.row, self.col)
+        self.interface = Interface()
+        
+    def update_board(self):
+        self.interface.update()

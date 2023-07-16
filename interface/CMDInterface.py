@@ -9,13 +9,15 @@ class Block:
         self.y
 
 
-class CmdInterface:
-    def __init__(self, row, col):
-        for r in range(row):
-            if r == 0:
-                self._make_block()
+class CMDInterface:
+    def __init__(self, row, col) -> None:
+        self.row = row
+        self.col = col
 
     def _make_block(self, mode, width=4, height=1):
+        """
+        width and height for the display section, excluding borders
+        """
         if mode == 'solid':
             horizontal_line = '─' * (width - 2)
             top_bottom_line = '┌' + horizontal_line + '┐'
@@ -26,6 +28,14 @@ class CmdInterface:
             for _ in range(height - 2):
                 print(middle_line)
             print(bottom_line)
-        # elif mode == ''
+        elif mode == 'hollow':
+            horizontal_line = ' ' * (width + 2)
+            for _ in range(height + 2):
+                print(horizontal_line)
+
+    def update(self):
+        
+        
+
     
     
