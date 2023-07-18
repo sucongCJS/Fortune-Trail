@@ -14,4 +14,4 @@ class Screen:
 
             self.board.update_board()
 
-            time.sleep(0.1)
+            time.sleep(2)

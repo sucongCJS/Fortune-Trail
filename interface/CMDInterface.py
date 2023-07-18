@@ -34,8 +34,4 @@ class CMDInterface:
                 print(horizontal_line)
 
     def update(self):
-        
-        
-
-    
-    
+        self._make_block('solid')
