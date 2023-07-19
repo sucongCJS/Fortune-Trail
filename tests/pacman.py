@@ -101,10 +101,10 @@ def world():
             y = 180 - (index // 20) * 20
             square(x, y)
 
-            if tile == 1:
-                path.up()
-                path.goto(x + 10, y + 10)
-                path.dot(2, 'white')
+            # if tile == 1:
+            #     path.up()
+            #     path.goto(x + 10, y + 10)
+            #     path.dot(2, 'white')
 
 
 def move():
@@ -164,7 +164,7 @@ def change(x, y):
         aim.y = y
 
 
-setup(420, 420, 370, 100)
+setup(520, 420, 370, 100)
 hideturtle()
 tracer(False)
 writer.goto(160, 160)
@@ -176,5 +176,5 @@ onkey(lambda: change(-5, 0), 'Left')
 onkey(lambda: change(0, 5), 'Up')
 onkey(lambda: change(0, -5), 'Down')
 world()
-move()
+# move()
 done()

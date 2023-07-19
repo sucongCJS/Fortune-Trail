@@ -1,17 +1,21 @@
 import time
 import os
 
+from interface.turtleInterface import TurtleInterface
+from interface.pygameInterface import PygameInterface
+
+interface_dict = {
+    'turtle': TurtleInterface,
+    'pygame': PygameInterface,
+}
+
 class Screen:
-    def __init__(self, board) -> None:
-        self.board = board
+    def __init__(self, tiles, interface_type) -> None:
+        Interface = interface_dict.get(interface_type)
+        if not Interface:
+            raise ValueError('Invalid interface type')
         
-    def clear_screen(self):
-        os.system('cls' if os.name == 'nt' else 'clear')
+        self.interface = Interface(tiles)
 
     def update_screen(self):
-        while True:
-            self.clear_screen()
-
-            self.board.update_board()
-
-            time.sleep(2)
+        self.interface.update()

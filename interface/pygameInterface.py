@@ -1,0 +1,2 @@
+class PygameInterface:
+    pass
