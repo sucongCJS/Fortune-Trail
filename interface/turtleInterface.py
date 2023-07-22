@@ -32,7 +32,7 @@ class TurtleInterface:
     def update(self):   
         turtle.bgcolor('black')
         
-        self.path('white')
+        self.path.color('white')
         for i in range(self.chessboard_height):
             for j in range(self.chessboard_width):
                 tile = self.chess_tiles[i][j]
@@ -41,10 +41,10 @@ class TurtleInterface:
                     x = (i % self.chess_len) 
         
 
-        if tile > 0:
-            x = (index % 20) * 20 - 200
-            y = 180 - (index // 20) * 20
-            square(x, y)
+                if tile > 0:
+                    x = i * self.cell_len - 400
+                    y = j * self.cell_len - 220
+                    self._square(x, y)
 
         turtle.done()
 
